@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Swap Var</title>
+  </head>
+  <body>
+    <h1>Assignment1.</h1>
+    <button onclick="swapVariables()">Swap</button>
+    <p>Before swap:</p>
+    <p>Variable 1: <span id="var1">1</span></p>
+    <p>Variable 2: <span id="var2">2</span></p>
+    <p>After swap:</p>
+    <p>Variable 1: <span id="var1-swapped"></span></p>
+    <p>Variable 2: <span id="var2-swapped"></span></p>
+    <script>
+      function swapVariables() {
+        let a = 1;
+        let b = 2;
+        [a, b] = [b, a];
+        document.getElementById("var1-swapped").innerText = a;
+        document.getElementById("var2-swapped").innerText = b;
+      }
+
+
+///////////////////////////////////////////////////////////////////////
+      function findMinMax(...values) {
+    let minValue = Math.min(...values);
+    let maxValue = Math.max(...values);
+    return {min: minValue, max: maxValue};
+    }
+    let values = [1, 2, 3, 4, 5];
+    let result = findMinMax(...values);
+      console.log(`Min value: ${result.min}`);
+      console.log(`Max value: ${result.max}`);
+///////////////////////////////////////////////////////////////
+const fruits = ["apple", "strawberry", "banana", "orange", "mango"];
+
+const isAllStrings = fruits.every((fruit) => typeof fruit === "string");
+console.log("Is all elements a string?", isAllStrings);
+
+const hasSomeA = fruits.some((fruit) => fruit.startsWith("a"));
+console.log("Do some elements start with 'a'?", hasSomeA);
+
+const filteredFruits = fruits.filter((fruit) =>
+  fruit.startsWith("b") || fruit.startsWith("s")
+);
+console.log("Filtered fruits:", filteredFruits);
+
+const likeFruits = fruits.map((fruit) => `I like ${fruit}`);
+console.log("Liked fruits:", likeFruits);
+
+likeFruits.forEach((fruit) => console.log(fruit));
+
+
+    </script>
+  </body>
+</html>
